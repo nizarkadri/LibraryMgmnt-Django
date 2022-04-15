@@ -1,0 +1,13 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    <form id="login" method="post" action="{% url 'myapp:login' %}">
+    {% csrf_token %}
+    Username: <input type="text" name="username" placeholder="username" size="50"/>
+    <br />
+        Password: <input type="password" name="password" placeholder="password" size="50"/>
+    <br />
+        <input type="hidden" name="next" value="{{ next }}">
+    <input type="submit" value="Login"/>
+    </form>
+     <a href="/password_reset">Forgot password?</a>
+{% endblock %}

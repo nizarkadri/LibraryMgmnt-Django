@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+<h3>{% block myhdg %}Hello {{request.user.first_name}} {{ request.user.last_name }} {% endblock %}</h3>
+{% block body_block %}
+    {% if topics %}
+        <h2>Interested Topics:</h2>
+        {% for topic in topics %}
+            <li><b>{{ topic.name }}</b></li>
+        {% endfor %}
+    {% else %}
+        <strong>Nothing here!</strong>
+    {% endif %}
+
+    {% if course_list %}
+        <p>Registered Courses:</p>
+        {% for course in course_list %}
+            <p><b>{{ course.title }}</b> with duration of <em>{{ course.topic.length }} weeks</em>.</p>
+        {% endfor %}
+    {% else %}
+        <strong>No registered courses!</strong>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'myapp/base.html' %}
+<h3>{% block myhdg %}Hello {{request.user.first_name}} {{ request.user.last_name }} {% endblock %}</h3>
+{% block body_block %}
+    {% if courses %}
+        <h2>List of ordered Courses:</h2>
+        {% for course in courses %}
+            <p>{{ forloop.counter }}.) {{ course.title }} has been purchased for ${{ course.price }}.</p>
+        {% endfor %}
+    {% else %}
+        <strong>Nothing!</strong>
+    {% endif %}
+{% endblock %}

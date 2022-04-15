@@ -1,0 +1,32 @@
+{% extends 'myapp/base.html' %}
+<h3>{% block myhdg %}Hello {{request.user.first_name}} {{ request.user.last_name }} {% endblock %}</h3>
+
+{% block body_block%}
+    <div class="container">
+    <div class="row justify-content-md-center">
+       <div class="col-md-auto">
+
+       </div>
+        <div class="col-md-auto">
+            {% if top_list %}
+            <p class="myheading">List of Topics</p>
+            <ol>
+                {% for top in top_list %}
+                    <li><a href="{{ forloop.counter }} "> {{ top.name }}</a> </li>
+                {% endfor %}
+            </ol>
+            {% else %}
+                <strong>There are no available topics!</strong>
+            {% endif %}
+
+            <p>Last login {{ last_login }}</p>
+       </div>
+        <div class="col-md-auto">
+
+       </div>
+    </div>
+
+    </div>
+{#<p><a href="{% url 'myapp:about' %}">About Page</a></p>#}
+
+{% endblock %}

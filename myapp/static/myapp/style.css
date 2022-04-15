@@ -1,0 +1,61 @@
+html{
+    font-family:Poppins;
+}
+h3{
+    background-color:#073A71;
+    color:#B4D2F3;
+    font: normal normal normal 1px Poppins;
+    text-align:center;
+    margin: 2px;
+}
+#OrderBtn{
+    width:100%;
+    background:#073A71;
+    color:#B4D2F3;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+#OrderBtn:hover{
+    width:100%;
+    background:#073A71;
+    color:#B4D2F3;
+    box-shadow: 0 0px 0px 0 rgba(0,0,0,0.2), 0 0px 0px 0 rgba(0,0,0,0.19);
+}
+/*.mainContent{*/
+/*    margin-left:auto;*/
+/*    margin-right:auto;*/
+/*    width:15%;*/
+/*}*/
+.myheading{
+    color:#073A71;
+    font: normal normal normal 20px Poppins;
+
+}
+.hbar1 {
+ display: inline;
+ margin: 15px;
+}
+
+.cell{
+   border: 2px solid #87bdf7;
+}
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}

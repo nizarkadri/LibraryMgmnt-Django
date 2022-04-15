@@ -1,0 +1,23 @@
+{% extends 'myapp/base.html' %}
+<h3>{% block myhdg %}Hello {{request.user.first_name}} {{ request.user.last_name }} {% endblock %}</h3>
+{% load static %}
+{% block body_block %}
+     <div class="container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+
+       </div>
+        <div class="col-md-auto">
+        <form action="{% url 'myapp:placeorder' %}" method="post">
+         {% csrf_token %}
+         {{ form.as_p }}
+         <input id="OrderBtn"type="submit" name="submit1" value="Place Order" />
+         </form>
+       </div>
+        <div class="col-md-auto">
+
+       </div>
+
+    </div>
+     </div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'myapp/base.html' %}
+<h3>{% block myhdg %}Hello {{request.user.first_name}} {{ request.user.last_name }} {% endblock %}</h3>
+{% block body_block %}
+
+    <form action="{% url 'myapp:register' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" name="register" value="Register"/>
+    </form>
+{% endblock %}

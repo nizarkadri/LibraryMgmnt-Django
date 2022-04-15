@@ -1,0 +1,27 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+<h3>{% block myhdg %}Hello {{request.user.first_name}} {{ request.user.last_name }} {% endblock %}</h3>
+ {% block body_block %}
+{#     c={{ courselist }}#}
+
+    <br>
+{#     <label>Category:</label>{{ category }}#}
+{#    <br>#}
+<div style="font: normal normal normal 15px Poppins;">
+     <h2 >
+         Courses with {{ length }} weeks under {{ price }}$ are listed below:
+     </h2>
+
+     <ul>
+
+        {% for k,v in courselist.items %}
+            <b><li>{{ k }}</li></b>
+                <ol>
+                {% for j in v %}
+                    <li>{{ j }}</li>
+                    {% endfor %}
+                </ol>
+            {% endfor %}
+    </ul>
+</div>
+ {% endblock %}

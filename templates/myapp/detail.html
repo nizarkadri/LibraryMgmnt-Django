@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+<h3>{% block myhdg %}Hello {{request.user.first_name}} {{ request.user.last_name }} {% endblock %}</h3>
+{% block body_block %}
+
+    {% if course_list %}
+
+    <h2>Courses:</h2>
+    {% for course in course_list %}
+        <p>{{ course.title }} is of {{ course.topic.length }} weeks</p>
+    {% endfor %}
+    {% else %}
+    <strong>No courses</strong>
+    {% endif %}
+{% endblock %}
